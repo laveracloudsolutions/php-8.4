@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build and Retag
+
+# Controls when the workflow will run
+on:
+
+  # Shedule 1 fois par semaine
+  schedule:
+    - cron: "0 12 * * 6"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Build and Retag
+jobs:
+
+  # Build all images in .github/images.json
+  build-all:
+    uses: laveracloudsolutions/github-pipeline-library/.github/workflows/build.yml@main
+    with:
+      config-path: .scripts/images.json
+    secrets: inherit
+
+  # Add Tags to ghcr.io/laveracloudsolutions/php-runner
+  retag-php-runner:
+    uses: laveracloudsolutions/github-pipeline-library/.github/workflows/retag.yml@main
+    with:
+      source-image: ghcr.io/laveracloudsolutions/php-runner:8.4-apache-trixie
+      version-cmd: php -r "echo PHP_VERSION;"
+    secrets: inherit
+
+  # Add Tags to ghcr.io/laveracloudsolutions/php-tools
+  retag-php-tools:
+    uses: laveracloudsolutions/github-pipeline-library/.github/workflows/retag.yml@main
+    with:
+      source-image: ghcr.io/laveracloudsolutions/php-tools:8.4-apache-trixie
+      version-cmd: php -r "echo PHP_VERSION;"
+    secrets: inherit
