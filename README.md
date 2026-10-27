@@ -4,32 +4,30 @@
 
 ## Php 8.4
 
-Base Php Apache depuis Docker Hub
+Docker Image Base Php Apache > Identique à la version Docker Hub
+
+> [Liste des Tags disponibles](https://github.com/orgs/laveracloudsolutions/packages/container/package/php)
 
 ## Php Runner 8.4
 
-PHP Runner: Base Php Apache + Commons Lib / Config (OpenTelemetry, etc)
+Docker Image utilisé pour exécuter des applications de type PHP | PHP Runner: Base Php Apache + Commons Lib / Config (OpenTelemetry, etc)
 
-> Docker Image utilisé pour exécuter des applications de type PHP
-
-Préparation (Manuelle)
+> [Liste des Tags disponibles](https://github.com/orgs/laveracloudsolutions/packages/container/package/php-runner)
 
 ```bash
-# Tagguer l'image
+# Docker Build and Push
 docker build -t ghcr.io/laveracloudsolutions/php-runner:8.4-apache-trixie .
 docker push ghcr.io/laveracloudsolutions/php-runner:8.4-apache-trixie
 ```
 
 ## Php Tools 8.4
 
-PHP Tools: Base Php Runner + Dev Tools (NodeJS, Yarn, Composer, etc)
+Docker Images de type PHP à destination des dev (avec utilitaires pour "devcontainer / sonarqube / etc") | PHP Tools: Base Php Runner + Dev Tools (NodeJS, Yarn, Composer, etc)
 
-> Docker Images de type PHP à destination des dev (avec utilitaires pour "devcontainer / sonarqube / etc")
-
-Préparation (Manuelle)
+> [Liste des Tags disponibles](https://github.com/orgs/laveracloudsolutions/packages/container/package/php-tools)
 
 ```bash
-# Tagguer l'image
+# Docker Build and Push
 docker build -t ghcr.io/laveracloudsolutions/php-tools:8.4-apache-trixie .
 docker push ghcr.io/laveracloudsolutions/php-tools:8.4-apache-trixie
 ```
