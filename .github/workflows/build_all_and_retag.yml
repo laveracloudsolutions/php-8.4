@@ -24,6 +24,7 @@ jobs:
 
   # Add Tags to ghcr.io/laveracloudsolutions/php-runner
   retag-php-runner:
+    needs: build-all
     uses: laveracloudsolutions/github-pipeline-library/.github/workflows/retag.yml@main
     with:
       source-image: ghcr.io/laveracloudsolutions/php-runner:8.4-apache-trixie
@@ -32,6 +33,7 @@ jobs:
 
   # Add Tags to ghcr.io/laveracloudsolutions/php-tools
   retag-php-tools:
+    needs: build-all
     uses: laveracloudsolutions/github-pipeline-library/.github/workflows/retag.yml@main
     with:
       source-image: ghcr.io/laveracloudsolutions/php-tools:8.4-apache-trixie
