@@ -18,6 +18,8 @@ jobs:
   # Build all images in .github/images.json
   build-all:
     uses: laveracloudsolutions/github-pipeline-library/.github/workflows/build.yml@main
+    with:
+      config-path: .scripts/images.json
     secrets: inherit
 
   # Add Tags to ghcr.io/laveracloudsolutions/php-runner
