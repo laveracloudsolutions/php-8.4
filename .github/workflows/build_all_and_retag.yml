@@ -5,9 +5,9 @@ name: Build and Retag
 # Controls when the workflow will run
 on:
 
-  # Shedule 1 fois par semaine
+  # Shedule 1 fois par jour
   schedule:
-    - cron: "0 12 * * 6"
+    - cron: "0 6 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
